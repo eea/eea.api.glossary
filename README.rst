@@ -1,111 +1,82 @@
-.. This README is meant for consumption by humans and PyPI. PyPI can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
-   This text does not appear on PyPI or github. It is a comment.
-
-.. image:: https://github.com/collective/eea.api.glossary/actions/workflows/plone-package.yml/badge.svg
-    :target: https://github.com/collective/eea.api.glossary/actions/workflows/plone-package.yml
-
-.. image:: https://coveralls.io/repos/github/collective/eea.api.glossary/badge.svg?branch=main
-    :target: https://coveralls.io/github/collective/eea.api.glossary?branch=main
-    :alt: Coveralls
-
-.. image:: https://codecov.io/gh/collective/eea.api.glossary/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/collective/eea.api.glossary
-
-.. image:: https://img.shields.io/pypi/v/eea.api.glossary.svg
-    :target: https://pypi.python.org/pypi/eea.api.glossary/
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/status/eea.api.glossary.svg
-    :target: https://pypi.python.org/pypi/eea.api.glossary
-    :alt: Egg Status
-
-.. image:: https://img.shields.io/pypi/pyversions/eea.api.glossary.svg?style=plastic   :alt: Supported - Python Versions
-
-.. image:: https://img.shields.io/pypi/l/eea.api.glossary.svg
-    :target: https://pypi.python.org/pypi/eea.api.glossary/
-    :alt: License
-
-
-================
+==========================
 eea.api.glossary
-================
+==========================
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=eea/eea.api.glossary/develop
+  :target: https://ci.eionet.europa.eu/job/eea/job/eea.api.glossary/job/develop/display/redirect
+  :alt: Develop
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=eea/eea.api.glossary/master
+  :target: https://ci.eionet.europa.eu/job/eea/job/eea.api.glossary/job/master/display/redirect
+  :alt: Master
 
-An API for the volto-eea-slate-glossary addon
+The eea.api.glossary is a Plone add-on
 
-Features
---------
-
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+.. contents::
 
 
-Documentation
--------------
+Main features
+=============
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+1. Easy to install/uninstall via Site Setup > Add-ons
+2.
+3.
 
+Install
+=======
 
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
-
-
-Installation
-------------
-
-Install eea.api.glossary by adding it to your buildout::
+* Add eea.api.glossary to your eggs section in your buildout and
+  re-run buildout::
 
     [buildout]
+    eggs +=
+      eea.api.glossary
 
-    ...
+* Or via docker::
 
-    eggs =
-        eea.api.glossary
+    $ docker run --rm -p 8080:8080 -e ADDONS="eea.api.glossary" plone
 
+* Install *eea.api.glossary* within Site Setup > Add-ons
 
-and then running ``bin/buildout``
+Eggs repository
+===============
 
-
-Authors
--------
-
-Provided by awesome people ;)
-
-
-Contributors
-------------
-
-Put your name here, you deserve it!
-
-- ?
+- https://pypi.python.org/pypi/eea.api.glossary
+- http://eggrepo.eea.europa.eu/simple
 
 
-Contribute
-----------
+Plone versions
+==============
+It has been developed and tested for Plone 5.
 
-- Issue Tracker: https://github.com/collective/eea.api.glossary/issues
-- Source Code: https://github.com/collective/eea.api.glossary
-- Documentation: https://docs.plone.org/foo/bar
+How to contribute
+=================
+See the `contribution guidelines (CONTRIBUTING.md) <https://github.com/eea/eea.api.glossary/blob/master/CONTRIBUTING.md>`_.
+
+Copyright and license
+=====================
+
+eea.api.glossary (the Original Code) is free software; you can
+redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation;
+either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 59
+Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+
+The Initial Owner of the Original Code is European Environment Agency (EEA).
+Portions created by Eau de Web are Copyright (C) 2009 by
+European Environment Agency. All Rights Reserved.
 
 
-Support
--------
+Funding
+=======
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+EEA_ - European Environment Agency (EU)
 
-
-License
--------
-
-The project is licensed under the GPLv2.
+.. _EEA: https://www.eea.europa.eu/
+.. _`EEA Web Systems Training`: http://www.youtube.com/user/eeacms/videos?view=1
