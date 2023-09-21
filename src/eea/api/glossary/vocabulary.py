@@ -30,11 +30,15 @@ class GlossaryTermsVocabulary(object):
 
         terms_vocab = []
 
-        host = os.environ.get('RAZZLE_PROXY_ES_DSN_globalsearch')
+        es_dsn = os.environ.get('RAZZLE_PROXY_ES_DSN_globalsearch')
+        es_dsn_split = es_dsn.split('/')
+        host = "/".join(es_dsn_split[:-1])
+        index_name = es_dsn_split[-1]
+
         es = Elasticsearch(host)
 
         resp = es.search(
-            index="data_searchui",
+            index=index_name,
             query={
                 "bool": {
                     "must": [
