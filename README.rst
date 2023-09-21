@@ -16,9 +16,8 @@ The eea.api.glossary is a Plone add-on
 Main features
 =============
 
-1. Easy to install/uninstall via Site Setup > Add-ons
-2.
-3.
+1. Provides the vocabulary for the `volto-eea-slate-glossary <https://github.com/eea/volto-eea-slate-glossary>`_ addon
+
 
 Install
 =======
