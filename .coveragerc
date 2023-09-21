@@ -1,6 +1,0 @@
-[report]
-include =
-    src/eea.api/*
-omit =
-    */test*
-    */upgrades/*
