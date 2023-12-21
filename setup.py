@@ -37,7 +37,6 @@ setup(
         'PyPI': 'https://pypi.org/project/eea.api.glossary/',
         'Source': 'https://github.com/collective/eea.api.glossary',
         'Tracker': 'https://github.com/collective/eea.api.glossary/issues',
-        # 'Documentation': 'https://eea.api.glossary.readthedocs.io/en/latest/',
     },
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
