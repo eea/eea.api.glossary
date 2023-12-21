@@ -96,7 +96,7 @@ def _sync():
 
     This function uses the 'i18ndude' tool to synchronize message
     templates and existing translations. It calls the 'sync' command
-    to update the '.pot' file with new messages and update existing 
+    to update the '.pot' file with new messages and update existing
     '.po' files in the 'LC_MESSAGES' folders within the specified
     'locale_path'.
 
