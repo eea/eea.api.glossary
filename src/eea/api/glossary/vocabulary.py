@@ -2,8 +2,8 @@
 """ GlossaryTermsVocabulary """
 import json
 import os
-from zope.globalrequest import getRequest
 from elasticsearch import Elasticsearch
+from zope.globalrequest import getRequest
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.interface import implementer
@@ -18,7 +18,6 @@ class GlossaryTermsVocabulary(object):
     def __call__(self, context):
         request = getRequest()
         request_title = request.form.get('title', '')
-        print(request_title)
         request_term = ''
 
         request_token = request.form.get('token', '')
