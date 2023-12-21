@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+"""
+Test suite for acceptance tests in the 'eea.api.glossary' package.
+
+This module defines a test suite for running Robot Framework
+acceptance tests in the 'eea.api.glossary' package. It uses the
+'plone.testing.layered' approach to apply the
+'EEA_API_GLOSSARY_ACCEPTANCE_TESTING' layer to each test case.
+"""
 import unittest
 import os
 from eea.api.glossary.testing import EEA_API_GLOSSARY_ACCEPTANCE_TESTING  # noqa: E501
@@ -9,6 +17,16 @@ import robotsuite
 
 
 def test_suite():
+    """
+    Create and return a test suite for acceptance tests.
+
+    This function builds a test suite by discovering Robot Framework test files
+    ('.robot' files) in the 'robot' directory and adding them to the suite.
+    Each test case is then layered with 'EEA_API_GLOSSARY_ACCEPTANCE_TESTING'.
+
+    Returns:
+    unittest.TestSuite: The test suite for acceptance tests.
+    """
     suite = unittest.TestSuite()
     current_dir = os.path.abspath(os.path.dirname(__file__))
     robot_dir = os.path.join(current_dir, 'robot')
