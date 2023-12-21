@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-from zope.globalrequest import getRequest
+""" GlossaryTermsVocabulary """
 import json
 import os
+from zope.globalrequest import getRequest
 from elasticsearch import Elasticsearch
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary
@@ -47,8 +48,6 @@ class GlossaryTermsVocabulary(object):
                                           "query": request_term + '*'}}]}})
 
         for item in resp["hits"]["hits"]:
-            # import pdb
-            # pdb.set_trace()
             term = item['_source']['title']
             # url = item['_source']['about']
             source = item['_source']['term_source']
@@ -72,7 +71,6 @@ class GlossaryTermsVocabulary(object):
                 )
             )
 
-        # import pdb; pdb.set_trace()
         return SimpleVocabulary(terms_vocab)
 
 
