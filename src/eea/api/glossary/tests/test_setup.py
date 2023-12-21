@@ -40,10 +40,36 @@ class TestSetup(unittest.TestCase):
 
 
 class TestUninstall(unittest.TestCase):
+    """
+    Unit tests for the uninstallation process of the 'eea.api.glossary'
+    product.
+
+    This test class is intended to verify the correct behavior of the
+    uninstallation process for the 'eea.api.glossary' product. It ensures
+    that the product can be successfully uninstalled and that the system is
+    left in a consistent state.
+    """
 
     layer = EEA_API_GLOSSARY_INTEGRATION_TESTING
 
     def setUp(self):
+        """
+        Set up the test environment for uninstalling the
+        'eea.api.glossary' product.
+
+        This method performs the following steps:
+        1. Get the Plone portal and installer tool.
+        2. Temporarily elevate the test user's role to 'Manager'.
+        3. Uninstall the 'eea.api.glossary' product using the Plone
+           installer tool.
+        4. Restore the test user's original roles.
+
+        This ensures that the product is uninstalled and the system is
+        left in a consistent state for further testing.
+
+        Returns:
+        None
+        """
         self.portal = self.layer['portal']
         if get_installer:
             self.installer = get_installer(self.portal, self.layer['request'])

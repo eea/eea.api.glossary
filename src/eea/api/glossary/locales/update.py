@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+"""Update locale folders"""
 import os
 import subprocess
 import pkg_resources

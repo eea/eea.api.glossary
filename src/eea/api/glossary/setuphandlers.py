@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Utility class HiddenProfiles"""
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 
