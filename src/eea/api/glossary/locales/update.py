@@ -20,14 +20,14 @@ def locale_folder_setup():
     """
     Set up locale folders and initialize message catalogs for each language.
 
-    This function changes the current working directory to the 'locale_path' and creates
-    the necessary folders and files for internationalization and localization using the
-    gettext module.
+    This function changes the current working directory to the 'locale_path'
+    and creates the necessary folders and files for internationalization and
+    localization using the gettext module.
 
-    It iterates through the subdirectories in the current directory, assumes each
-    subdirectory represents a language, and checks if the 'LC_MESSAGES' folder exists.
-    If not, it creates the 'LC_MESSAGES' folder and initializes the message catalog for
-    the specified 'domain' using the 'msginit' command.
+    It iterates through the subdirectories in the current directory, assumes 
+    each subdirectory represents a language, and checks if the 'LC_MESSAGES' 
+    folder exists. If not, it creates the 'LC_MESSAGES' folder and initializes
+    the message catalog for the specified 'domain' using the 'msginit' command.
 
     Parameters:
     None
@@ -36,8 +36,8 @@ def locale_folder_setup():
     None
 
     Note:
-    - 'locale_path' should be set before calling this function to the desired path
-      containing language folders.
+    - 'locale_path' should be set before calling this function to the desired
+      path containing language folders.
     - 'domain' should be set to the desired domain for message catalogs.
     """
     os.chdir(locale_path)
@@ -65,10 +65,11 @@ def _rebuild():
     """
     Rebuild compiled message catalogs for the specified domain.
 
-    This function uses the 'i18ndude' tool to rebuild compiled message catalogs for the
-    specified 'domain'. It calls the 'rebuild-pot' command to update the '.pot' file and
-    create or update the '.po' files in the specified 'target_path'. Exclusions can be
-    specified to exclude certain files or directories during the rebuild.
+    This function uses the 'i18ndude' tool to rebuild compiled message 
+    catalogs for the specified 'domain'. It calls the 'rebuild-pot' command
+    to update the '.pot' file and create or update the '.po' files in the 
+    specified 'target_path'. Exclusions can be specified to exclude certain 
+    files or directories during the rebuild.
 
     Parameters:
     None
@@ -93,9 +94,10 @@ def _sync():
     """
     Synchronize message templates and existing translations.
 
-    This function uses the 'i18ndude' tool to synchronize message templates and existing
-    translations. It calls the 'sync' command to update the '.pot' file with new messages
-    and update existing '.po' files in the 'LC_MESSAGES' folders within the specified
+    This function uses the 'i18ndude' tool to synchronize message
+    templates and existing translations. It calls the 'sync' command
+    to update the '.pot' file with new messages and update existing 
+    '.po' files in the 'LC_MESSAGES' folders within the specified
     'locale_path'.
 
     Parameters:
