@@ -24,8 +24,8 @@ def locale_folder_setup():
     and creates the necessary folders and files for internationalization and
     localization using the gettext module.
 
-    It iterates through the subdirectories in the current directory, assumes 
-    each subdirectory represents a language, and checks if the 'LC_MESSAGES' 
+    It iterates through the subdirectories in the current directory, assumes
+    each subdirectory represents a language, and checks if the 'LC_MESSAGES'
     folder exists. If not, it creates the 'LC_MESSAGES' folder and initializes
     the message catalog for the specified 'domain' using the 'msginit' command.
 
@@ -65,10 +65,10 @@ def _rebuild():
     """
     Rebuild compiled message catalogs for the specified domain.
 
-    This function uses the 'i18ndude' tool to rebuild compiled message 
+    This function uses the 'i18ndude' tool to rebuild compiled message
     catalogs for the specified 'domain'. It calls the 'rebuild-pot' command
-    to update the '.pot' file and create or update the '.po' files in the 
-    specified 'target_path'. Exclusions can be specified to exclude certain 
+    to update the '.pot' file and create or update the '.po' files in the
+    specified 'target_path'. Exclusions can be specified to exclude certain
     files or directories during the rebuild.
 
     Parameters:
