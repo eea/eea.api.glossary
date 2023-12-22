@@ -16,14 +16,8 @@ NAME = "eea.api.glossary"
 PATH = ["src"] + NAME.split(".") + ["version.txt"]
 VERSION = open(join(*PATH)).read().strip()
 
-
-long_description = '\n\n'.join([
-    open('README.rst').read(),
-])
-
-
 setup(
-    name='eea.api.glossary',
+    name=NAME,
     version=VERSION,
     description="An API for the volto-eea-slate-glossary addon",
     long_description_content_type="text/x-rst",
