@@ -9,7 +9,9 @@ acceptance tests in the 'eea.api.glossary' package. It uses the
 """
 import unittest
 import os
-from eea.api.glossary.testing import EEA_API_GLOSSARY_ACCEPTANCE_TESTING  # noqa: E501
+from eea.api.glossary.testing import (
+  EEA_API_GLOSSARY_ACCEPTANCE_TESTING  # noqa: E501
+)
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 
