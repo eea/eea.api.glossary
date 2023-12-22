@@ -12,7 +12,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='eea.api.glossary',
-    version='1.0a1',
+    version='1.0.0.dev0',
     description="An API for the volto-eea-slate-glossary addon",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
