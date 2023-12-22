@@ -1,8 +1,20 @@
 # -*- coding: utf-8 -*-
 """Installer for the eea.api.glossary package."""
 
+from os.path import join
 from setuptools import find_packages
 from setuptools import setup
+
+long_description = "\n\n".join(
+    [
+        open("README.rst").read(),
+        open(join("docs", "HISTORY.txt")).read(),
+    ]
+)
+
+NAME = "eea.api.glossary"
+PATH = ["src"] + NAME.split(".") + ["version.txt"]
+VERSION = open(join(*PATH)).read().strip()
 
 
 long_description = '\n\n'.join([
@@ -12,8 +24,9 @@ long_description = '\n\n'.join([
 
 setup(
     name='eea.api.glossary',
-    version='1.0.0.dev0',
+    version=VERSION,
     description="An API for the volto-eea-slate-glossary addon",
+    long_description_content_type="text/x-rst",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
     classifiers=[
@@ -35,8 +48,8 @@ setup(
     url='https://github.com/collective/eea.api.glossary',
     project_urls={
         'PyPI': 'https://pypi.org/project/eea.api.glossary/',
-        'Source': 'https://github.com/collective/eea.api.glossary',
-        'Tracker': 'https://github.com/collective/eea.api.glossary/issues',
+        'Source': 'https://github.com/eea/eea.api.glossary',
+        'Tracker': 'https://github.com/eea/eea.api.glossary/issues',
     },
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
