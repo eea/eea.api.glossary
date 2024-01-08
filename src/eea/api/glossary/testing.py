@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+"""
+Test fixtures and layers for the 'eea.api.glossary' Plone package.
+
+This module defines fixtures and layers for testing the
+'eea.api.glossary' Plone package using the Plone testing framework.
+It includes integration testing, functional testing,
+and acceptance testing layers.
+"""
 from plone.app.contenttypes.testing import PLONE_APP_CONTENTTYPES_FIXTURE
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import applyProfile
@@ -11,10 +19,22 @@ import eea.api.glossary
 
 
 class EeaApiGlossaryLayer(PloneSandboxLayer):
+    """
+    Testing layer for the 'eea.api.glossary' Plone package.
+
+    This layer includes the necessary setup for testing the 'eea.api.glossary'
+    package using the Plone testing framework.
+    """
 
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
+        """
+        Set up Zope for the testing layer.
+
+        This method loads any other ZCML that is required for the tests,
+        including the 'plone.restapi' and 'eea.api.glossary' packages.
+        """
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
@@ -23,6 +43,12 @@ class EeaApiGlossaryLayer(PloneSandboxLayer):
         self.loadZCML(package=eea.api.glossary)
 
     def setUpPloneSite(self, portal):
+        """
+        Set up the Plone site with the 'eea.api.glossary' package.
+
+        This method applies the 'eea.api.glossary:default' profile to
+        the Plone site.
+        """
         applyProfile(portal, 'eea.api.glossary:default')
 
 

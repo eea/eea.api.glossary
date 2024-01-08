@@ -1,10 +1,22 @@
 # -*- coding: utf-8 -*-
+"""Utility class HiddenProfiles"""
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
+    """
+    A utility class for hiding certain profiles and products during
+    installation.
+
+    This class implements the `INonInstallable` interface, allowing
+    customization of profiles and products that should be hidden from
+    site creation and QuickInstaller.
+
+    Attributes:
+    - None
+    """
 
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
