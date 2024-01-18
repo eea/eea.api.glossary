@@ -48,19 +48,60 @@ class GlossaryTermsVocabulary(object):
 
         for item in resp["hits"]["hits"]:
             term = item['_source']['title']
-            # url = item['_source']['about']
-            source = item['_source']['term_source']
+            sources = []
+
+            if item['_source']['term_source']:
+                title = item['_source']['term_source']
+                link = title.startswith('http') and title or None
+
+                sources.append({
+                    'link': link, 
+                    'organisation': '', 
+                    'title': item['_source']['term_source']
+            })
+
             definition = item['_source']['term_description']
             term_json = {
                 'term': term,
                 'definition': definition,
-                'source': source,
+                'sources': sources,
             }
             if definition in ('None', '', None):
                 continue
 
-            # items.append({"term": term,
-            #              "definition": [definition]})
+            terms_vocab.append(
+                SimpleVocabulary.createTerm(
+                    json.dumps(term_json),  # value
+                    json.dumps(term_json),  # token
+                    json.dumps(term_json),  # title
+                )
+            )
+
+        # add values from wise-test too
+        index_name = 'wisetest_searchui'
+
+        es = Elasticsearch(host)
+
+        resp = es.search(
+            index=index_name,
+            query={
+                "bool": {
+                    "must": [
+                        {"match": {"objectProvides": "Glossary term"}},
+                        {"query_string": {"default_field": "title",
+                                          "query": request_term + '*'}}]}})
+
+        for item in resp["hits"]["hits"]:
+            term = item['_source']['title']
+            sources = item['_source']['data_provenances']
+            definition = item['_source']['description']
+            term_json = {
+                'term': term,
+                'definition': definition,
+                'sources': sources,
+            }
+            if definition in ('None', '', None):
+                continue
 
             terms_vocab.append(
                 SimpleVocabulary.createTerm(
