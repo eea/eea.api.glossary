@@ -35,8 +35,8 @@ class GlossaryTermsVocabulary(object):
         host = "/".join(es_dsn_split[:-1])
         index_name = es_dsn_split[-1]
 
+        # Globalsearch
         es = Elasticsearch(host)
-
         resp = es.search(
             index=index_name,
             query={
@@ -46,55 +46,40 @@ class GlossaryTermsVocabulary(object):
                         {"query_string": {"default_field": "title",
                                           "query": request_term + '*'}}]}})
 
-        for item in resp["hits"]["hits"]:
+        # Wise test temporarily added
+        index_name = 'wisetest_searchui'
+        resp_wise_test = es.search(
+            index=index_name,
+            query={
+                "bool": {
+                    "must": [
+                        {"match": {"objectProvides": "Glossary term"}},
+                        {"query_string": {"default_field": "title",
+                                          "query": request_term + '*'}}]}})
+
+        results = resp["hits"]["hits"] + resp_wise_test["hits"]["hits"]
+
+        for item in results:
             term = item['_source']['title']
             sources = []
 
-            if item['_source']['term_source']:
+            if 'term_source' in item['_source']:
                 title = item['_source']['term_source']
-                link = title.startswith('http') and title or None
+                link = title if title.startswith('http') else None
 
                 sources.append({
-                    'link': link, 
-                    'organisation': '', 
+                    'link': link,
+                    'organisation': '',
                     'title': item['_source']['term_source']
-            })
+                })
+            else:
+                sources = item['_source']['data_provenances']
 
-            definition = item['_source']['term_description']
-            term_json = {
-                'term': term,
-                'definition': definition,
-                'sources': sources,
-            }
-            if definition in ('None', '', None):
-                continue
+            if 'term_description' in item['_source']:
+                definition = item['_source']['term_description']
+            else:
+                definition = item['_source']['description']
 
-            terms_vocab.append(
-                SimpleVocabulary.createTerm(
-                    json.dumps(term_json),  # value
-                    json.dumps(term_json),  # token
-                    json.dumps(term_json),  # title
-                )
-            )
-
-        # add values from wise-test too
-        index_name = 'wisetest_searchui'
-
-        es = Elasticsearch(host)
-
-        resp = es.search(
-            index=index_name,
-            query={
-                "bool": {
-                    "must": [
-                        {"match": {"objectProvides": "Glossary term"}},
-                        {"query_string": {"default_field": "title",
-                                          "query": request_term + '*'}}]}})
-
-        for item in resp["hits"]["hits"]:
-            term = item['_source']['title']
-            sources = item['_source']['data_provenances']
-            definition = item['_source']['description']
             term_json = {
                 'term': term,
                 'definition': definition,
