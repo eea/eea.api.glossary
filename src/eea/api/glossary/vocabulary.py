@@ -47,17 +47,17 @@ class GlossaryTermsVocabulary(object):
                                           "query": request_term + '*'}}]}})
 
         # Wise test temporarily added
-        index_name = 'wisetest_searchui'
-        resp_wise_test = es.search(
-            index=index_name,
-            query={
-                "bool": {
-                    "must": [
-                        {"match": {"objectProvides": "Glossary term"}},
-                        {"query_string": {"default_field": "title",
-                                          "query": request_term + '*'}}]}})
+        # index_name = 'wisetest_searchui'
+        # resp_wise_test = es.search(
+        #     index=index_name,
+        #     query={
+        #         "bool": {
+        #             "must": [
+        #                 {"match": {"objectProvides": "Glossary term"}},
+        #                 {"query_string": {"default_field": "title",
+        #                                   "query": request_term + '*'}}]}})
 
-        results = resp["hits"]["hits"] + resp_wise_test["hits"]["hits"]
+        results = resp["hits"]["hits"]  # + resp_wise_test["hits"]["hits"]
 
         for item in results:
             term = item['_source']['title']
@@ -95,7 +95,6 @@ class GlossaryTermsVocabulary(object):
                     json.dumps(term_json),  # title
                 )
             )
-
         return SimpleVocabulary(terms_vocab)
 
 
