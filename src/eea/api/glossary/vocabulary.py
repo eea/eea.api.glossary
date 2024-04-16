@@ -57,7 +57,7 @@ class GlossaryTermsVocabulary(object):
         #                 {"query_string": {"default_field": "title",
         #                                   "query": request_term + '*'}}]}})
 
-        results = resp["hits"]["hits"] #  + resp_wise_test["hits"]["hits"]
+        results = resp["hits"]["hits"]  # + resp_wise_test["hits"]["hits"]
 
         for item in results:
             term = item['_source']['title']
