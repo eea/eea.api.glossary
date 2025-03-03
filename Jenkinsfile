@@ -3,7 +3,7 @@ pipeline {
 
   environment {
         GIT_NAME = "eea.api.glossary"
-        SONARQUBE_TAGS = "water.europa.eu-freshwater,forest.eea.europa.eu,insitu.copernicus.eu,climate-advisory-board.europa.eu,demo-www.eea.europa.eu,www.eea.europa.eu-en,clmsdemo.devel6cph.eea.europa.eu"
+        SONARQUBE_TAGS = "water.europa.eu-freshwater,forest.eea.europa.eu,insitu.copernicus.eu,climate-advisory-board.europa.eu,demo-www.eea.europa.eu,www.eea.europa.eu-en,clmsdemo.devel6cph.eea.europa.eu,land.copernicus.eu"
     }
 
   stages {
