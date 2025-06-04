@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="map_visualization" meta_type="Dexterity FTI" i18n:domain="plone"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <property name="title" i18n:translate="">Map (simple)</property>
+ <property name="description" i18n:translate=""></property>
+ <property name="icon_expr"></property>
+ <property name="factory">map_visualization</property>
+ <property
+    name="add_view_expr">string:${folder_url}/++add++map_visualization</property>
+ <property name="link_target"></property>
+ <property name="immediate_view">view</property>
+ <property name="global_allow">True</property>
+ <property name="filter_content_types">True</property>
+ <property name="allowed_content_types"/>
+ <property name="allow_discussion">False</property>
+ <property name="default_view">view</property>
+ <property name="view_methods">
+  <element value="view"/>
+ </property>
+ <property name="default_view_fallback">False</property>
+ <property name="add_permission">eea.dataconnector.addArcGISLayers</property>
+ <property
+    name="klass">collective.folderishtypes.dx.content.FolderishDocument</property>
+ <property name="behaviors">
+  <element value="plone.namefromtitle"/>
+  <element value="plone.allowdiscussion"/>
+  <element value="plone.excludefromnavigation"/>
+  <element value="plone.shortname"/>
+  <element value="plone.richtext"/>
+  <element value="plone.relateditems"/>
+  <element value="plone.versioning"/>
+  <element value="plone.tableofcontents"/>
+  <element value="plone.locking"/>
+  <element
+     value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes"/>
+  <element value="eea.dataconnector.map_visualization"/>
+  <element value="eea.dataconnector.figure_note"/>
+  <element value="volto.blocks.editable.layout"/>
+ </property>
+ <property name="schema"></property>
+ <property
+    name="model_source">&lt;model xmlns:i18n=&quot;http://xml.zope.org/namespaces/i18n&quot; xmlns:form=&quot;http://namespaces.plone.org/supermodel/form&quot; xmlns:security=&quot;http://namespaces.plone.org/supermodel/security&quot; xmlns:users=&quot;http://namespaces.plone.org/supermodel/users&quot; xmlns:marshal=&quot;http://namespaces.plone.org/supermodel/marshal&quot; xmlns:lingua=&quot;http://namespaces.plone.org/supermodel/lingua&quot; xmlns=&quot;http://namespaces.plone.org/supermodel/schema&quot;&gt;
+    &lt;schema&gt;
+      &lt;fieldset name=&quot;layout&quot; label=&quot;Layout&quot;&gt;
+        &lt;field name=&quot;blocks&quot; type=&quot;plone.schema.jsonfield.JSONField&quot;&gt;
+          &lt;default&gt;{&#x27;4fe19d8e-b424-4b2f-af0c-21276ef9c7a5&#x27;: {&#x27;@type&#x27;: &#x27;group&#x27;, &#x27;data&#x27;: {&#x27;blocks&#x27;: {&#x27;a03afc38-91be-4495-9c51-337eeadee080&#x27;: {&#x27;data&#x27;: {&#x27;assetPosition&#x27;: &#x27;top&#x27;, &#x27;imageSize&#x27;: &#x27;icon&#x27;, &#x27;iconSize&#x27;: &#x27;small&#x27;, &#x27;blocks&#x27;: {&#x27;d6af4137-9d5b-4f92-9387-3d9ece248634&#x27;: {&#x27;@type&#x27;: &#x27;tab&#x27;, &#x27;assetPosition&#x27;: &#x27;top&#x27;, &#x27;blocks&#x27;: {&#x27;68dbf4ac-466f-43cd-a036-d7d418cb0a68&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;}, &#x27;6c8ed6e6-d2e1-4076-ad42-f9802c8be23f&#x27;: {&#x27;@type&#x27;: &#x27;metadataSection&#x27;, &#x27;fields&#x27;: [{&#x27;@id&#x27;: &#x27;b33cd0ca-66ac-4ebf-a7ec-f57d76824218&#x27;}], &#x27;variation&#x27;: &#x27;default&#x27;}, &#x27;undefined&#x27;: {&#x27;@type&#x27;: &#x27;metadataSection&#x27;, &#x27;fields&#x27;: [{&#x27;@id&#x27;: &#x27;0ef57dc9-76d3-4547-b0ab-1828018fcbd5&#x27;, &#x27;field&#x27;: {&#x27;id&#x27;: &#x27;data_provenance&#x27;, &#x27;title&#x27;: &#x27;Add sources for the data used&#x27;, &#x27;widget&#x27;: &#x27;data_provenance&#x27;}}], &#x27;variation&#x27;: &#x27;default&#x27;}}, &#x27;blocks_layout&#x27;: {&#x27;items&#x27;: [&#x27;6c8ed6e6-d2e1-4076-ad42-f9802c8be23f&#x27;, &#x27;68dbf4ac-466f-43cd-a036-d7d418cb0a68&#x27;]}, &#x27;iconSize&#x27;: &#x27;small&#x27;, &#x27;imageSize&#x27;: &#x27;icon&#x27;, &#x27;title&#x27;: &#x27;Data sources&#x27;}, &#x27;e406a006-cc3c-4948-a680-998dfbd3ad05&#x27;: {&#x27;@type&#x27;: &#x27;tab&#x27;, &#x27;assetPosition&#x27;: &#x27;top&#x27;, &#x27;blocks&#x27;: {&#x27;8a93c085-14b9-45ef-8254-883a0bcec48d&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;}, &#x27;f32fc728-0b62-40aa-aa8f-7b6f56612b25&#x27;: {&#x27;@type&#x27;: &#x27;metadataSection&#x27;, &#x27;fields&#x27;: [{&#x27;@id&#x27;: &#x27;21027d99-063c-48b7-8a2b-e744fb323db4&#x27;, &#x27;field&#x27;: {&#x27;id&#x27;: &#x27;lineage&#x27;, &#x27;title&#x27;: &#x27;Notes&#x27;, &#x27;widget&#x27;: &#x27;textarea&#x27;}}], &#x27;variation&#x27;: &#x27;default&#x27;}}, &#x27;blocks_layout&#x27;: {&#x27;items&#x27;: [&#x27;f32fc728-0b62-40aa-aa8f-7b6f56612b25&#x27;, &#x27;8a93c085-14b9-45ef-8254-883a0bcec48d&#x27;]}, &#x27;iconSize&#x27;: &#x27;small&#x27;, &#x27;imageSize&#x27;: &#x27;icon&#x27;, &#x27;title&#x27;: &#x27;Notes&#x27;}}, &#x27;blocks_layout&#x27;: {&#x27;items&#x27;: [&#x27;e406a006-cc3c-4948-a680-998dfbd3ad05&#x27;, &#x27;d6af4137-9d5b-4f92-9387-3d9ece248634&#x27;]}}, &#x27;verticalAlign&#x27;: &#x27;flex-start&#x27;, &#x27;menuFluid&#x27;: True, &#x27;menuPointing&#x27;: True, &#x27;menuSecondary&#x27;: True, &#x27;@type&#x27;: &#x27;tabs_block&#x27;, &#x27;variation&#x27;: &#x27;default&#x27;}, &#x27;a3e0cd6d-a453-4ada-a455-3c58f58ce881&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;}}, &#x27;blocks_layout&#x27;: {&#x27;items&#x27;: [&#x27;a03afc38-91be-4495-9c51-337eeadee080&#x27;, &#x27;a3e0cd6d-a453-4ada-a455-3c58f58ce881&#x27;]}}}, &#x27;7b6a6bce-a2f9-403e-8961-7db40a1fc515&#x27;: {&#x27;@type&#x27;: &#x27;title&#x27;}, &#x27;aed81a0b-6599-4600-9e75-e47f45dcc4d7&#x27;: {&#x27;@type&#x27;: &#x27;group&#x27;, &#x27;data&#x27;: {&#x27;blocks&#x27;: {&#x27;1eafe2b2-5cb5-48ac-ab46-a8ee4055e595&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;}, &#x27;622b526c-738e-4353-9c34-c880b7182429&#x27;: {&#x27;@type&#x27;: &#x27;description&#x27;}, &#x27;f3c8464d-60da-401e-9575-6fb079a7a0d7&#x27;: {&#x27;@type&#x27;: &#x27;metadata&#x27;, &#x27;data&#x27;: {&#x27;id&#x27;: &#x27;map_visualization_data&#x27;, &#x27;widget&#x27;: &#x27;json&#x27;}}, &#x27;undefined&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;, &#x27;plaintext&#x27;: &#x27;&#x27;, &#x27;value&#x27;: [{&#x27;children&#x27;: [{&#x27;text&#x27;: &#x27;&#x27;}], &#x27;type&#x27;: &#x27;p&#x27;}]}}, &#x27;blocks_layout&#x27;: {&#x27;items&#x27;: [&#x27;622b526c-738e-4353-9c34-c880b7182429&#x27;, &#x27;f3c8464d-60da-401e-9575-6fb079a7a0d7&#x27;, &#x27;1eafe2b2-5cb5-48ac-ab46-a8ee4055e595&#x27;]}}, &#x27;variation&#x27;: &#x27;default&#x27;}, &#x27;b34f6186-84a7-46ca-86fc-b754b564913c&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;}, &#x27;undefined&#x27;: {&#x27;as&#x27;: &#x27;div&#x27;, &#x27;@type&#x27;: &#x27;group&#x27;, &#x27;data&#x27;: {&#x27;blocks&#x27;: {&#x27;a03afc38-91be-4495-9c51-337eeadee080&#x27;: {&#x27;@type&#x27;: &#x27;tabs_block&#x27;, &#x27;data&#x27;: {&#x27;assetPosition&#x27;: &#x27;top&#x27;, &#x27;blocks&#x27;: {&#x27;d6af4137-9d5b-4f92-9387-3d9ece248634&#x27;: {&#x27;@type&#x27;: &#x27;tab&#x27;, &#x27;assetPosition&#x27;: &#x27;top&#x27;, &#x27;blocks&#x27;: {&#x27;68dbf4ac-466f-43cd-a036-d7d418cb0a68&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;}, &#x27;6c8ed6e6-d2e1-4076-ad42-f9802c8be23f&#x27;: {&#x27;@type&#x27;: &#x27;metadataSection&#x27;, &#x27;fields&#x27;: [{&#x27;@id&#x27;: &#x27;b33cd0ca-66ac-4ebf-a7ec-f57d76824218&#x27;}], &#x27;variation&#x27;: &#x27;default&#x27;}, &#x27;undefined&#x27;: {&#x27;@type&#x27;: &#x27;metadataSection&#x27;, &#x27;fields&#x27;: [{&#x27;@id&#x27;: &#x27;0ef57dc9-76d3-4547-b0ab-1828018fcbd5&#x27;, &#x27;field&#x27;: {&#x27;id&#x27;: &#x27;data_provenance&#x27;, &#x27;title&#x27;: &#x27;Add sources for the data used&#x27;, &#x27;widget&#x27;: &#x27;data_provenance&#x27;}}], &#x27;variation&#x27;: &#x27;default&#x27;}}, &#x27;blocks_layout&#x27;: {&#x27;items&#x27;: [&#x27;6c8ed6e6-d2e1-4076-ad42-f9802c8be23f&#x27;, &#x27;68dbf4ac-466f-43cd-a036-d7d418cb0a68&#x27;]}, &#x27;iconSize&#x27;: &#x27;small&#x27;, &#x27;imageSize&#x27;: &#x27;icon&#x27;, &#x27;title&#x27;: &#x27;Sources&#x27;}, &#x27;e406a006-cc3c-4948-a680-998dfbd3ad05&#x27;: {&#x27;@type&#x27;: &#x27;tab&#x27;, &#x27;assetPosition&#x27;: &#x27;top&#x27;, &#x27;blocks&#x27;: {&#x27;8a93c085-14b9-45ef-8254-883a0bcec48d&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;}, &#x27;f32fc728-0b62-40aa-aa8f-7b6f56612b25&#x27;: {&#x27;@type&#x27;: &#x27;metadataSection&#x27;, &#x27;fields&#x27;: [{&#x27;@id&#x27;: &#x27;21027d99-063c-48b7-8a2b-e744fb323db4&#x27;, &#x27;field&#x27;: {&#x27;id&#x27;: &#x27;lineage&#x27;, &#x27;title&#x27;: &#x27;Notes&#x27;, &#x27;widget&#x27;: &#x27;textarea&#x27;}}], &#x27;variation&#x27;: &#x27;default&#x27;}}, &#x27;blocks_layout&#x27;: {&#x27;items&#x27;: [&#x27;f32fc728-0b62-40aa-aa8f-7b6f56612b25&#x27;, &#x27;8a93c085-14b9-45ef-8254-883a0bcec48d&#x27;]}, &#x27;iconSize&#x27;: &#x27;small&#x27;, &#x27;imageSize&#x27;: &#x27;icon&#x27;, &#x27;title&#x27;: &#x27;Notes&#x27;}}, &#x27;blocks_layout&#x27;: {&#x27;items&#x27;: [&#x27;e406a006-cc3c-4948-a680-998dfbd3ad05&#x27;, &#x27;d6af4137-9d5b-4f92-9387-3d9ece248634&#x27;]}, &#x27;iconSize&#x27;: &#x27;small&#x27;, &#x27;imageSize&#x27;: &#x27;icon&#x27;}, &#x27;menuFluid&#x27;: True, &#x27;menuPointing&#x27;: True, &#x27;menuSecondary&#x27;: True, &#x27;variation&#x27;: &#x27;default&#x27;, &#x27;verticalAlign&#x27;: &#x27;flex-start&#x27;}, &#x27;a3e0cd6d-a453-4ada-a455-3c58f58ce881&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;}}, &#x27;blocks_layout&#x27;: {&#x27;items&#x27;: [&#x27;a03afc38-91be-4495-9c51-337eeadee080&#x27;, &#x27;a3e0cd6d-a453-4ada-a455-3c58f58ce881&#x27;]}}}}&lt;/default&gt;
+          &lt;description/&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Blocks&lt;/title&gt;
+        &lt;/field&gt;
+        &lt;field name=&quot;blocks_layout&quot; type=&quot;plone.schema.jsonfield.JSONField&quot;&gt;
+          &lt;default&gt;{&#x27;items&#x27;: [&#x27;7b6a6bce-a2f9-403e-8961-7db40a1fc515&#x27;, &#x27;aed81a0b-6599-4600-9e75-e47f45dcc4d7&#x27;, &#x27;4fe19d8e-b424-4b2f-af0c-21276ef9c7a5&#x27;, &#x27;b34f6186-84a7-46ca-86fc-b754b564913c&#x27;]}&lt;/default&gt;
+          &lt;description/&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Blocks Layout&lt;/title&gt;
+        &lt;/field&gt;
+      &lt;/fieldset&gt;
+    &lt;/schema&gt;
+  &lt;/model&gt;</property>
+ <property
+    name="model_file">plone.app.contenttypes.schema:document.xml</property>
+ <property name="schema_policy">dexterity</property>
+ <alias from="(Default)" to="(dynamic view)"/>
+ <alias from="edit" to="@@edit"/>
+ <alias from="sharing" to="@@sharing"/>
+ <alias from="view" to="(selected layout)"/>
+ <action title="View" action_id="view" category="object" condition_expr=""
+    icon_expr="" link_target="" url_expr="string:${object_url}"
+    visible="True">
+  <permission value="View"/>
+ </action>
+ <action title="Edit" action_id="edit" category="object" condition_expr=""
+    icon_expr="" link_target="" url_expr="string:${object_url}/edit"
+    visible="True">
+  <permission value="Modify portal content"/>
+ </action>
+</object>

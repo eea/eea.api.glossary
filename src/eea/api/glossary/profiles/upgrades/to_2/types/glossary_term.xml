@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="glossary_term" meta_type="Dexterity FTI" i18n:domain="plone"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <property name="title" i18n:translate="">Glossary Term</property>
+ <property name="description" i18n:translate="">Glossary term</property>
+ <property name="icon_expr">string:${portal_url}/document_icon.png</property>
+ <property name="factory">glossary_term</property>
+ <property
+    name="add_view_expr">string:${folder_url}/++add++glossary_term</property>
+ <property name="link_target"></property>
+ <property name="immediate_view">view</property>
+ <property name="global_allow">True</property>
+ <property name="filter_content_types">True</property>
+ <property name="allowed_content_types"/>
+ <property name="allow_discussion">False</property>
+ <property name="default_view">view</property>
+ <property name="view_methods">
+  <element value="view"/>
+ </property>
+ <property name="default_view_fallback">False</property>
+ <property name="add_permission">cmf.AddPortalContent</property>
+ <property name="klass">plone.dexterity.content.Container</property>
+ <property name="behaviors">
+  <element value="plone.dublincore"/>
+  <element value="plone.namefromtitle"/>
+  <element value="eea.coremetadata.behavior"/>
+  <element value="volto.blocks.editable.layout"/>
+ </property>
+ <property name="schema"></property>
+ <property
+    name="model_source">&lt;model xmlns:i18n=&quot;http://xml.zope.org/namespaces/i18n&quot; xmlns:form=&quot;http://namespaces.plone.org/supermodel/form&quot; xmlns:security=&quot;http://namespaces.plone.org/supermodel/security&quot; xmlns:users=&quot;http://namespaces.plone.org/supermodel/users&quot; xmlns:marshal=&quot;http://namespaces.plone.org/supermodel/marshal&quot; xmlns:lingua=&quot;http://namespaces.plone.org/supermodel/lingua&quot; xmlns=&quot;http://namespaces.plone.org/supermodel/schema&quot;&gt;
+    &lt;schema&gt;
+      &lt;fieldset name=&quot;layout&quot; label=&quot;Layout&quot;&gt;
+        &lt;field name=&quot;blocks&quot; type=&quot;plone.schema.jsonfield.JSONField&quot;&gt;
+          &lt;default&gt;{&#x27;1e83b4c2-0788-4f78-b8a6-c868f241388c&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;, &#x27;fixed&#x27;: True, &#x27;plaintext&#x27;: &#x27; Add sources here &#x27;, &#x27;readOnly&#x27;: False, &#x27;value&#x27;: [{&#x27;children&#x27;: [{&#x27;text&#x27;: &#x27;&#x27;}, {&#x27;children&#x27;: [{&#x27;text&#x27;: &#x27;Add sources here&#x27;}], &#x27;data&#x27;: {&#x27;metadata&#x27;: &#x27;data_provenance&#x27;, &#x27;widget&#x27;: &#x27;data_provenance&#x27;}, &#x27;type&#x27;: &#x27;mention&#x27;}, {&#x27;text&#x27;: &#x27;&#x27;}], &#x27;type&#x27;: &#x27;p&#x27;}], &#x27;disableNewBlocks&#x27;: True}, &#x27;44021c30-76be-45ac-a93c-c8b2ea9b1dd3&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;, &#x27;fixed&#x27;: True, &#x27;plaintext&#x27;: &#x27;Source(s)&#x27;, &#x27;readOnly&#x27;: True, &#x27;value&#x27;: [{&#x27;children&#x27;: [{&#x27;text&#x27;: &#x27;Source(s)&#x27;}], &#x27;type&#x27;: &#x27;h3&#x27;}], &#x27;disableNewBlocks&#x27;: True}, &#x27;c34747ee-4af9-4f41-b0cb-b641fff1a750&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;, &#x27;fixed&#x27;: True, &#x27;plaintext&#x27;: &#x27;Definition&#x27;, &#x27;required&#x27;: True, &#x27;value&#x27;: [{&#x27;children&#x27;: [{&#x27;text&#x27;: &#x27;Definition&#x27;}], &#x27;type&#x27;: &#x27;h3&#x27;}], &#x27;readOnly&#x27;: True}, &#x27;cee704dc-bc9d-4ccc-a2a8-ec003ae89ea6&#x27;: {&#x27;@type&#x27;: &#x27;title&#x27;, &#x27;copyrightIcon&#x27;: &#x27;ri-copyright-line&#x27;, &#x27;disableNewBlocks&#x27;: True, &#x27;fixed&#x27;: True, &#x27;placeholder&#x27;: &#x27;Type the title of the glossary term here&#x27;, &#x27;readOnly&#x27;: False, &#x27;required&#x27;: True}, &#x27;e11e6b07-216c-41d3-87ce-5c6f2df46272&#x27;: {&#x27;@type&#x27;: &#x27;slate&#x27;, &#x27;fixed&#x27;: True, &#x27;plaintext&#x27;: &#x27; Please type term definition on the summary &#x27;, &#x27;readOnly&#x27;: False, &#x27;value&#x27;: [{&#x27;children&#x27;: [{&#x27;text&#x27;: &#x27;&#x27;}, {&#x27;children&#x27;: [{&#x27;text&#x27;: &#x27;Please type term definition on the summary&#x27;}], &#x27;data&#x27;: {&#x27;metadata&#x27;: &#x27;description&#x27;, &#x27;widget&#x27;: &#x27;textarea&#x27;}, &#x27;type&#x27;: &#x27;mention&#x27;}, {&#x27;text&#x27;: &#x27;&#x27;}], &#x27;type&#x27;: &#x27;p&#x27;}], &#x27;disableNewBlocks&#x27;: True}}&lt;/default&gt;
+          &lt;description/&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Blocks&lt;/title&gt;
+        &lt;/field&gt;
+        &lt;field name=&quot;blocks_layout&quot; type=&quot;plone.schema.jsonfield.JSONField&quot;&gt;
+          &lt;default&gt;{&#x27;items&#x27;: [&#x27;cee704dc-bc9d-4ccc-a2a8-ec003ae89ea6&#x27;, &#x27;c34747ee-4af9-4f41-b0cb-b641fff1a750&#x27;, &#x27;e11e6b07-216c-41d3-87ce-5c6f2df46272&#x27;, &#x27;44021c30-76be-45ac-a93c-c8b2ea9b1dd3&#x27;, &#x27;1e83b4c2-0788-4f78-b8a6-c868f241388c&#x27;]}&lt;/default&gt;
+          &lt;description/&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Blocks Layout&lt;/title&gt;
+        &lt;/field&gt;
+      &lt;/fieldset&gt;
+    &lt;/schema&gt;
+  &lt;/model&gt;</property>
+ <property name="model_file"></property>
+ <property name="schema_policy">dexterity</property>
+ <alias from="(Default)" to="(dynamic view)"/>
+ <alias from="edit" to="@@edit"/>
+ <alias from="sharing" to="@@sharing"/>
+ <alias from="view" to="(selected layout)"/>
+ <action title="View" action_id="view" category="object" condition_expr=""
+    icon_expr="" link_target="" url_expr="string:${object_url}"
+    visible="True">
+  <permission value="View"/>
+ </action>
+ <action title="Edit" action_id="edit" category="object" condition_expr=""
+    icon_expr="" link_target="" url_expr="string:${object_url}/edit"
+    visible="True">
+  <permission value="Modify portal content"/>
+ </action>
+</object>
