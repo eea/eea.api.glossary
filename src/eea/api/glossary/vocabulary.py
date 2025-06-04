@@ -9,6 +9,12 @@ from zope.schema.vocabulary import SimpleVocabulary
 from zope.interface import implementer
 
 
+HEADERS = {
+    "Accept": "application/vnd.elasticsearch+json; compatible-with=8",
+    "Content-Type": "application/vnd.elasticsearch+json; compatible-with=8"
+}
+
+
 @implementer(IContextSourceBinder)
 class GlossaryTermsVocabulary(object):
     """ GlossaryTermsVocabulary """
@@ -39,6 +45,7 @@ class GlossaryTermsVocabulary(object):
         es = Elasticsearch(host)
         resp = es.search(
             index=index_name,
+            headers=HEADERS,
             query={
                 "bool": {
                     "must": [

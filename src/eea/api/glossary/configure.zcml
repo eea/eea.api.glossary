@@ -36,6 +36,26 @@
       post_handler=".setuphandlers.uninstall"
       />
 
+  <genericsetup:registerProfile
+      name="to_2"
+      title="Import glossary_term content type"
+      description="Import glossary_term content type"
+      directory="profiles/upgrades/to_2"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+  />
+
+  <genericsetup:upgradeSteps
+    source="*"
+    destination="2"
+    profile="eea.api.glossary:default">
+
+    <genericsetup:upgradeDepends
+        title="Import glossary_term content type"
+        import_profile="eea.api.glossary:to_2"
+    />
+  </genericsetup:upgradeSteps>
+ 
+
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="eea.api.glossary-hiddenprofiles"
