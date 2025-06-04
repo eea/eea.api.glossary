@@ -42,10 +42,9 @@ class GlossaryTermsVocabulary(object):
         index_name = es_dsn_split[-1]
 
         # Globalsearch
-        es = Elasticsearch(host)
+        es = Elasticsearch(host, headers=HEADERS)
         resp = es.search(
             index=index_name,
-            headers=HEADERS,
             query={
                 "bool": {
                     "must": [
