@@ -58,7 +58,7 @@ setup(
         'z3c.jbot',
         'plone.api>=1.8.4',
         'plone.app.dexterity',
-        'elasticsearch==8.17.0'
+        'elasticsearch==8.17.2'
     ],
     extras_require={
         'test': [
