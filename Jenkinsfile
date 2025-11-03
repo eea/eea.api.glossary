@@ -136,7 +136,7 @@ pipeline {
           script {
             checkout scm
             unstash 'coverage'
-            junit 'coverage/junit-results/testreports/*.xml'
+            // junit 'coverage/junit-results/testreports/*.xml'
             def scannerHome = tool 'SonarQubeScanner';
             def nodeJS = tool 'NodeJS11';
             sh "sed -i 's|<source>/app</source>|<source>.</source>|g' coverage/coverage.xml"
