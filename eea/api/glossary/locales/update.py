@@ -9,7 +9,7 @@ import pkg_resources
 domain = "eea.api.glossary"
 os.chdir(pkg_resources.resource_filename(domain, ""))
 os.chdir("../../../")
-target_path = "src/eea.api/glossary/"
+target_path = "eea.api/glossary/"
 locale_path = target_path + "locales/"
 i18ndude = "./bin/i18ndude"
 

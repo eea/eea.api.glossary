@@ -13,7 +13,7 @@ long_description = "\n\n".join(
 )
 
 NAME = "eea.api.glossary"
-PATH = ["src"] + NAME.split(".") + ["version.txt"]
+PATH = NAME.split(".") + ["version.txt"]
 VERSION = open(join(*PATH)).read().strip()
 
 setup(
@@ -46,9 +46,9 @@ setup(
         "Tracker": "https://github.com/eea/eea.api.glossary/issues",
     },
     license="GPL version 2",
-    packages=find_packages("src", exclude=["ez_setup"]),
+    packages=find_packages(".", exclude=["ez_setup"]),
     namespace_packages=["eea", "eea.api"],
-    package_dir={"": "src"},
+    package_dir={"": "."},
     include_package_data=True,
     zip_safe=False,
     python_requires=">=3.7",
