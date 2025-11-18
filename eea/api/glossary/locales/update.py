@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 """Update locale folders"""
+
 import os
 import subprocess
 import pkg_resources
 
 
-domain = 'eea.api.glossary'
-os.chdir(pkg_resources.resource_filename(domain, ''))
-os.chdir('../../../')
-target_path = 'src/eea.api/glossary/'
-locale_path = target_path + 'locales/'
-i18ndude = './bin/i18ndude'
+domain = "eea.api.glossary"
+os.chdir(pkg_resources.resource_filename(domain, ""))
+os.chdir("../../../")
+target_path = "eea.api/glossary/"
+locale_path = target_path + "locales/"
+i18ndude = "./bin/i18ndude"
 
 # ignore node_modules files resulting in errors
 excludes = '"*.html *json-schema*.xml"'
@@ -41,26 +42,28 @@ def locale_folder_setup():
     - 'domain' should be set to the desired domain for message catalogs.
     """
     os.chdir(locale_path)
-    languages = [d for d in os.listdir('.') if os.path.isdir(d)]
+    languages = [d for d in os.listdir(".") if os.path.isdir(d)]
     for lang in languages:
         folder = os.listdir(lang)
-        if 'LC_MESSAGES' in folder:
+        if "LC_MESSAGES" in folder:
             continue
         else:
-            lc_messages_path = lang + '/LC_MESSAGES/'
+            lc_messages_path = lang + "/LC_MESSAGES/"
             os.mkdir(lc_messages_path)
-            cmd = ('msginit --locale={0} '
-                   '--input={1}.pot '
-                   '--output={0}/LC_MESSAGES/{1}.po'.format(
-                lang,
-                domain,
-            ))  # NOQA: E501
+            cmd = (
+                "msginit --locale={0} "
+                "--input={1}.pot "
+                "--output={0}/LC_MESSAGES/{1}.po".format(
+                    lang,
+                    domain,
+                )
+            )  # NOQA: E501
             subprocess.call(
                 cmd,
                 shell=True,
             )
 
-    os.chdir('../../../../')
+    os.chdir("../../../../")
 
 
 def _rebuild():
@@ -79,14 +82,16 @@ def _rebuild():
     Returns:
     None
     """
-    cmd = ('{i18ndude} rebuild-pot --pot {locale_path}/{domain}.pot '
-           '--exclude {excludes} --create {domain} {target_path}'.format(
-        i18ndude=i18ndude,
-        locale_path=locale_path,
-        domain=domain,
-        target_path=target_path,
-        excludes=excludes,
-    ))  # NOQA: E501
+    cmd = (
+        "{i18ndude} rebuild-pot --pot {locale_path}/{domain}.pot "
+        "--exclude {excludes} --create {domain} {target_path}".format(
+            i18ndude=i18ndude,
+            locale_path=locale_path,
+            domain=domain,
+            target_path=target_path,
+            excludes=excludes,
+        )
+    )  # NOQA: E501
     subprocess.call(
         cmd,
         shell=True,
@@ -109,7 +114,7 @@ def _sync():
     Returns:
     None
     """
-    cmd = '{0} sync --pot {1}/{2}.pot {1}*/LC_MESSAGES/{2}.po'.format(
+    cmd = "{0} sync --pot {1}/{2}.pot {1}*/LC_MESSAGES/{2}.po".format(
         i18ndude,
         locale_path,
         domain,
