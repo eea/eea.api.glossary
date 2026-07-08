@@ -16,6 +16,7 @@ class EeaApiGlossaryLayer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         """Set up Zope."""
         import plone.app.dexterity
+
         self.loadZCML(package=plone.app.dexterity)
         self.loadZCML(package=eea.api.glossary)
 
